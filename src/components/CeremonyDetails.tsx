@@ -30,7 +30,7 @@ export const CeremonyDetails: React.FC = () => {
             </h2>
 
             <p className="text-stone-500/90 font-serif text-lg sm:text-xl leading-relaxed mb-16 max-w-lg">
-              We are honored to invite you to witness our union as we exchange vows in a traditional Poruwa ceremony, surrounded by the beauty of nature and the warmth of our loved ones.
+              We are honored to invite you and your family to witness our union as we exchange vows in a traditional Poruwa ceremony, surrounded by the beauty of nature and the warmth of our loved ones.
             </p>
 
             {/* Premium Timeline */}
@@ -43,8 +43,7 @@ export const CeremonyDetails: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-2 group-hover:text-brand-sakura-deep transition-colors duration-500 flex flex-col sm:flex-row sm:items-baseline gap-2">
-                    <span>Thursday, May 21</span>
-                    <span className="text-xl sm:text-2xl font-sinhala">මැයි 21 බ්‍රහස්පතින්දා</span>
+                    <span>Sunday, July 26</span>
                   </h4>
                   <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">2026</p>
                 </div>
@@ -57,10 +56,9 @@ export const CeremonyDetails: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-2 group-hover:text-brand-sakura-deep transition-colors duration-500 flex flex-col sm:flex-row sm:items-baseline gap-2">
-                    <span>08:15 AM - 04:00 PM</span>
-                    <span className="text-xl sm:text-2xl font-sinhala">පෙ.ව. 08:15 - ප.ව. 04:00</span>
+                    <span>08:00 AM Onwards</span>
                   </h4>
-                  <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Wedding Ceremony & Reception | විවාහ මංගල උත්සවය සහ දිවා භෝජනය</p>
+                  <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Poruwa Ceremony at 8.15 AM</p>
                 </div>
               </div>
 
@@ -71,56 +69,16 @@ export const CeremonyDetails: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-serif text-2xl sm:text-3xl text-stone-800 mb-2 group-hover:text-brand-sakura-deep transition-colors duration-500 flex flex-col sm:flex-row sm:items-baseline gap-2">
-                    <span>Pubudu Villa Reception Hall</span>
-                    <span className="text-xl sm:text-2xl font-sinhala">පුබුදු විලා උත්සව ශාලාව</span>
+                    <span>Villa Crystal Malabe</span>
                   </h4>
-                  <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Piliyandala, Sri Lanka | පිළියන්දල</p>
+                  <p className="text-stone-500/80 text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold">Malabe, Sri Lanka</p>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Side: Visual Composition (Image removed as requested) */}
-        <div className="lg:w-1/2 w-full relative mt-16 lg:mt-0 flex items-center justify-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full max-w-md aspect-[4/5] flex items-center justify-center bg-white/40 rounded-[3rem] border border-white/60 shadow-xl overflow-hidden"
-          >
-            {/* Artistic Decoration instead of image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-sakura/10 via-transparent to-brand-sakura-deep/10" />
-            <div className="relative text-center p-12">
-               <motion.img 
-                 src="/50.png" 
-                 alt="Ceremony Illustration" 
-                 className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
-                 animate={{ scale: [1, 1.05, 1] }}
-                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-               />
-               <h4 className="font-display text-4xl text-stone-800 mb-4 tracking-tight mt-6">The Reception</h4>
-               <p className="text-stone-500/90 font-serif text-lg leading-relaxed">
-                 Followed by a celebratory lunch and festivities at the Pubudu Villa Reception Hall.
-               </p>
-            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -30, y: 30 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
-              className="absolute -bottom-6 -left-6 bg-white/85 backdrop-blur-xl p-8 shadow-[0_30px_60px_rgba(251,113,133,0.15)] rounded-2xl border border-white"
-            >
-              <span className="text-brand-sakura-deep font-sans font-bold tracking-[0.2em] text-[11px] uppercase block drop-shadow-sm">Since 08:15 AM</span>
-            </motion.div>
-
-            {/* Decorative Floating Circles */}
-            <div className="absolute -top-6 -right-6 w-24 sm:w-32 h-24 sm:w-32 rounded-full border-[1.5px] border-dashed border-brand-sakura/30 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:w-24 rounded-full border-[1.5px] border-brand-sakura/20" />
-          </motion.div>
-        </div>
       </div>
     </div>
   );

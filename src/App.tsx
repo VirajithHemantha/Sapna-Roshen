@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Music, Music2, Volume2, VolumeX } from 'lucide-react';
 import { FloatingPetals } from './components/FloatingPetals';
-import { Envelope } from './components/Envelope';
+import { IntroVideo } from './components/IntroVideo';
 import { Hero } from './components/Hero';
 import { Countdown } from './components/Countdown';
 import { CeremonyDetails } from './components/CeremonyDetails';
@@ -17,7 +17,7 @@ export default function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const weddingDate = new Date('2026-05-21T08:15:00');
+  const weddingDate = new Date('2026-07-26T08:15:00');
 
   const toggleMusic = () => {
     if (audioRef.current) {
@@ -43,7 +43,7 @@ export default function App() {
 
       <AnimatePresence mode="wait">
         {!showMain ? (
-          <Envelope key="envelope" onComplete={() => setShowMain(true)} />
+          <IntroVideo key="intro" onComplete={() => setShowMain(true)} />
         ) : (
           <motion.main
             key="main"
@@ -65,7 +65,8 @@ export default function App() {
               <Hero />
             </section>
 
-            <section id="countdown" className="py-16 sm:py-32 relative overflow-hidden bg-brand-champagne/30">
+            <section id="countdown" className="py-16 sm:py-32 relative overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/b/ChatGPT Image May 22, 2026, 12_26_02 AM.png')" }}>
+              <div className="absolute inset-0 bg-brand-champagne/40" />
               {/* Premium Background Ambient Glows */}
               <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[70%] bg-brand-sakura/30 blur-[120px] rounded-full" />
@@ -91,21 +92,25 @@ export default function App() {
               </div>
             </section>
 
-            <section id="couple" className="py-16 sm:py-32 bg-white">
+            <section id="couple" className="py-16 sm:py-32 relative bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/b/ChatGPT Image May 22, 2026, 12_28_21 AM.png')" }}>
+              <div className="absolute inset-0 bg-white/70" />
               <CoupleDetails />
             </section>
 
-            <section id="ceremony" className="py-16 sm:py-32 bg-brand-ivory">
+            <section id="ceremony" className="py-16 sm:py-32 relative bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/b/WhatsApp Image 2026-05-21 at 23.55.28.jpeg')" }}>
+              <div className="absolute inset-0 bg-brand-ivory/70" />
               <CeremonyDetails />
             </section>
 
             {/* Timeline section removed entirely as requested */}
 
-            <section id="location" className="py-16 sm:py-32 bg-white">
+            <section id="location" className="py-16 sm:py-32 relative bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/b/WhatsApp Image 2026-05-21 at 23.55.28.jpeg')" }}>
+              <div className="absolute inset-0 bg-white/70" />
               <Location />
             </section>
 
-            <section id="rsvp" className="py-16 sm:py-32 bg-brand-ivory relative">
+            <section id="rsvp" className="py-16 sm:py-32 relative bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('/b/WhatsApp Image 2026-05-21 at 23.55.28.jpeg')" }}>
+              <div className="absolute inset-0 bg-brand-ivory/80" />
               <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20 pointer-events-none" />
               <RSVPForm />
             </section>

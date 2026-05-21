@@ -7,7 +7,7 @@ export const RSVPForm: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     guests: '1',
-    dietaryNotes: '',
+    wishes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -18,15 +18,15 @@ export const RSVPForm: React.FC = () => {
     const guestValue = formData.guests;
 
     try {
-      await submitToGoogleSheet('rsvp', {
-        fullName: formData.fullName,
-        guests: guestValue,
-        dietaryNotes: formData.dietaryNotes,
-        submittedAt: new Date().toISOString(),
+      await submitToGoogleSheet('RSVPs and Wishes', {
+        'Full Name': formData.fullName,
+        'Number of Guests': guestValue,
+        'Wishes for the Couple': formData.wishes,
+        'Submitted At': new Date().toLocaleString(),
       });
 
       setStatus('success');
-      setFormData({ fullName: '', guests: '1', dietaryNotes: '' });
+      setFormData({ fullName: '', guests: '1', wishes: '' });
     } catch (error) {
       console.error('Error sending RSVP to Google Sheets: ', error);
       setStatus('error');
@@ -64,7 +64,9 @@ export const RSVPForm: React.FC = () => {
           </h2>
 
           <p className="text-stone-500/90 font-serif text-lg leading-relaxed mb-6">
-            Your presence means the world to us. Please kindly let us know if you will be able to join our celebration.
+            Your presence means the world to us. Please reserve your attendance with:<br /><br />
+            <span className="font-sans font-medium tracking-wide">+601133131276 (SAPNA-WHATSAPP)</span><br />
+            <span className="font-sans font-medium tracking-wide">+601112754649 (ROSHEN-WHATSAPP)</span>
           </p>
           <div className="w-12 h-[1px] bg-brand-sakura/50 mx-auto lg:mx-0" />
         </div>
@@ -136,12 +138,12 @@ export const RSVPForm: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Dietary Notes (Optional)</label>
+                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Wishes for the Couple (Optional)</label>
                   <textarea
-                    placeholder="We'd love to know if you have any allergies..."
+                    placeholder="Leave a lovely message or wish for Sapna and Roshen..."
                     className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-sakura/30 focus:border-brand-sakura-deep/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
-                    value={formData.dietaryNotes}
-                    onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}
+                    value={formData.wishes}
+                    onChange={(e) => setFormData({ ...formData, wishes: e.target.value })}
                   />
                 </div>
 

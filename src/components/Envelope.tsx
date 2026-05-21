@@ -79,9 +79,9 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
                 </div>
 
                 <h2 className="text-3xl sm:text-5xl font-display font-medium text-[#b91c3e] tracking-tight leading-[1.1] mb-2 sm:mb-3 drop-shadow-sm">
-                  Pasidu <br />
+                  Sapna <br />
                   <span className="text-xl sm:text-3xl text-[#d4af37] italic font-light my-1 block">&</span>
-                  Tharuka
+                  Roshen
                 </h2>
 
                 <div className="w-16 sm:w-24 h-[2px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto my-3 sm:my-5" />
@@ -90,7 +90,7 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
                   Request the honor of your presence
                 </p>
                 <p className="text-base sm:text-2xl font-serif text-[#b91c3e] tracking-[0.2em] mt-1 drop-shadow-sm leading-none font-semibold">
-                  21 • 05 • 2026
+                  26 • 07 • 2026
                 </p>
               </motion.div>
 
@@ -199,13 +199,13 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
 
                   <div className="relative flex flex-col items-center justify-center translate-y-[-2px]">
                     <span className="text-[#d4af37] font-serif text-3xl sm:text-4xl italic tracking-tighter drop-shadow-[0_2px_4px_rgba(50,0,10,0.9)]">
-                      P
+                      S
                     </span>
                     <span className="text-[#d4af37]/70 font-serif text-sm sm:text-base mx-0.5 font-light drop-shadow-[0_2px_4px_rgba(50,0,10,0.9)] my-[-6px]">
                       &
                     </span>
                     <span className="text-[#d4af37] font-serif text-3xl sm:text-4xl italic tracking-tighter drop-shadow-[0_2px_4px_rgba(50,0,10,0.9)]">
-                      T
+                      R
                     </span>
                   </div>
 
@@ -232,9 +232,9 @@ export const Envelope: React.FC<EnvelopeProps> = ({ onComplete }) => {
                     <motion.p 
                       animate={{ opacity: [0.7, 1, 0.7], scale: [1, 1.02, 1] }}
                       transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-[#d4af37] font-sinhala text-xl sm:text-3xl tracking-wide drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)] mb-1"
+                      className="text-[#d4af37] font-serif text-xl sm:text-3xl tracking-wide drop-shadow-[0_2px_10px_rgba(212,175,55,0.4)] mb-1"
                     >
-                      විවෘත කිරීමට ඔබන්න
+                      Tap to Open
                     </motion.p>
                     <p className="text-[#d4af37]/60 font-sans text-[10px] sm:text-xs tracking-[0.5em] uppercase font-bold drop-shadow-md">
                       Tap to Open

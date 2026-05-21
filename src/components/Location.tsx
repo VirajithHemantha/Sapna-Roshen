@@ -3,9 +3,9 @@ import { motion } from 'motion/react';
 import { MapPin, Navigation, Compass, Map } from 'lucide-react';
 
 export const Location: React.FC = () => {
-  const venueAddress = "Pubudu Villa Reception Hall, Piliyandala, Sri Lanka";
-  const mapUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.56441405!2d79.9173865!3d6.8176069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25aaa8a6e6481%3A0x7c316e42db0aa2e2!2sPubudu%20Villa%20Reception%20Hall%20-%20Piliyandala!5e0!3m2!1sen!2slk!4v1712821639000!5m2!1sen!2slk`;
-  const liveLocationUrl = "https://maps.app.goo.gl/rafWY55d4oXjR4SeA";
+  const venueAddress = "Villa Crystal, Malabe, Sri Lanka";
+  const mapUrl = `https://maps.google.com/maps?q=Villa+Crystal+Malabe&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+  const liveLocationUrl = "https://maps.app.goo.gl/VRHfbkgAoE3LUbSTA";
 
   return (
     <div className="max-w-[85rem] mx-auto px-6 relative py-12">
@@ -45,22 +45,25 @@ export const Location: React.FC = () => {
                   <MapPin className="text-brand-sakura-deep w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-2xl font-serif text-stone-800 mb-1">Pubudu Villa Reception Hall</p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] font-medium text-stone-400 leading-relaxed mb-6">Piliyandala, Sri Lanka</p>
+                  <p className="text-2xl font-serif text-stone-800 mb-1">Villa Crystal Malabe</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] font-medium text-stone-400 leading-relaxed mb-6">Malabe, Sri Lanka</p>
 
                   <p className="text-stone-500/90 italic font-serif text-lg leading-relaxed max-w-sm mb-10 pl-4 border-l-[1.5px] border-brand-sakura/40">
                     "A serene and elegant setting where we will begin our new chapter together."
                   </p>
 
-                  <a
-                    href={liveLocationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-stone-800 text-brand-champagne px-8 py-4 rounded-full font-sans tracking-[0.2em] text-xs uppercase hover:bg-stone-900 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-300 active:scale-95 group/btn"
-                  >
-                    <Navigation className="w-4 h-4 text-brand-sakura group-hover/btn:rotate-45 transition-transform duration-300" />
-                    Open Live Location
-                  </a>
+                  <div className="flex flex-col gap-4 items-start">
+                    <span className="text-sm font-bold text-brand-sakura-deep tracking-wider uppercase font-sans">Scan for the Location!</span>
+                    <a
+                      href={liveLocationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 bg-stone-800 text-brand-champagne px-8 py-4 rounded-full font-sans tracking-[0.2em] text-xs uppercase hover:bg-stone-900 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] transition-all duration-300 active:scale-95 group/btn"
+                    >
+                      <Navigation className="w-4 h-4 text-brand-sakura group-hover/btn:rotate-45 transition-transform duration-300" />
+                      Open Live Location
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

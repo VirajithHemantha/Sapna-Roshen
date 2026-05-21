@@ -1,80 +1,52 @@
-const SPREADSHEET_ID = '10ovNdHKxnbndtR-sjIzTsCI1TinEf9-DdmLV3R7aPns';
-const SHEET_NAMES = {
-  rsvp: 'rsvp',
-};
-
 function doPost(e) {
   try {
-    const sheetKey = ((e && e.parameter && e.parameter.sheet) || '').toLowerCase();
-    const payloadJson = (e && e.parameter && e.parameter.payload) || '{}';
-
-    if (!SHEET_NAMES[sheetKey]) {
-      return jsonResponse({ ok: false, error: 'Invalid sheet name. Use rsvp.' });
+    const sheetName = e.parameter.sheet;
+    const payload = JSON.parse(e.parameter.payload);
+    
+    const doc = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = doc.getSheetByName(sheetName);
+    
+    // Auto-create sheet if it doesn't exist
+    if (!sheet) {
+      sheet = doc.insertSheet(sheetName);
     }
-
-    const payload = JSON.parse(payloadJson);
-    const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheetName = SHEET_NAMES[sheetKey];
-    const sheet = spreadsheet.getSheetByName(sheetName) || spreadsheet.insertSheet(sheetName);
-
-    ensureHeaders(sheetKey, sheet);
-    sheet.appendRow(buildRow(sheetKey, payload));
-
-    return jsonResponse({ ok: true, sheet: sheetName });
-  } catch (error) {
-    return jsonResponse({
-      ok: false,
-      error: String(error && error.message ? error.message : error),
+    
+    // Get headers or auto-create them based on the payload keys
+    const headersRange = sheet.getRange(1, 1, 1, sheet.getLastColumn() || 1);
+    let headers = headersRange.getValues()[0];
+    
+    if (!headers || headers.length === 0 || headers[0] === "") {
+      headers = Object.keys(payload);
+      sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+      sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
+    }
+    
+    // Add missing headers dynamically
+    const newHeaders = Object.keys(payload).filter(key => !headers.includes(key));
+    if (newHeaders.length > 0) {
+      headers = headers.concat(newHeaders);
+      sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+      sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
+    }
+    
+    // Build row data mapping keys to columns
+    const rowData = headers.map(header => {
+      const value = payload[header];
+      return value !== undefined ? value : "";
     });
+    
+    // Append the row
+    sheet.appendRow(rowData);
+    
+    return ContentService.createTextOutput(JSON.stringify({ status: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService.createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
   }
 }
 
 function doGet(e) {
-  const action = ((e && e.parameter && e.parameter.action) || '').toLowerCase();
-
-  if (action === 'health') {
-    return jsonResponse({ ok: true, service: 'wedding-forms', timestamp: new Date().toISOString() });
-  }
-
-  return jsonResponse({ ok: true, message: 'Use POST with sheet=rsvp and payload=<json>' });
-}
-
-function ensureHeaders(sheetKey, sheet) {
-  if (sheet.getLastRow() > 0) {
-    return;
-  }
-
-  if (sheetKey === 'rsvp') {
-    sheet.appendRow(['Timestamp', 'Full Name', 'Guests', 'Dietary Notes', 'Submitted At (ISO)']);
-    return;
-  }
-}
-
-function buildRow(sheetKey, payload) {
-  const now = new Date();
-
-  if (sheetKey === 'rsvp') {
-    return [
-      now,
-      sanitize(payload.fullName),
-      isNaN(payload.guests) ? sanitize(payload.guests) : Number(payload.guests || 1),
-      sanitize(payload.dietaryNotes),
-      sanitize(payload.submittedAt),
-    ];
-  }
-
-  return [now, JSON.stringify(payload)];
-}
-
-function sanitize(value) {
-  if (value === null || value === undefined) {
-    return '';
-  }
-  return String(value).trim();
-}
-
-function jsonResponse(data) {
-  return ContentService
-    .createTextOutput(JSON.stringify(data))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput("Wedding RSVP Web App is running successfully! Use POST to submit data.");
 }

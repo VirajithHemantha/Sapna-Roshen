@@ -18,21 +18,14 @@ export const Hero: React.FC = () => {
         className="absolute inset-0 z-0 origin-center"
         style={{ y: y1, scale }}
       >
-        {/* Background Image with Cinematic Finish */}
+        {/* Background Image in True Quality */}
         <div
-          className="absolute inset-0 bg-cover bg-[center_15%] bg-no-repeat transition-all duration-1000 saturate-[0.3] contrast-[0.95] opacity-55"
-          style={{ backgroundImage: "url('/bride_couple.webp')" }}
+          className="absolute inset-0 bg-cover bg-[center_15%] bg-no-repeat transition-all duration-1000"
+          style={{ backgroundImage: "url('/b/ChatGPT Image May 22, 2026, 12_24_57 AM.png')" }}
         />
 
-        {/* Cinematic Vignette & Color Grading */}
-        <div className="absolute inset-0 bg-brand-ivory/50 mix-blend-multiply" />
-
-        {/* Soft elegant gradient overlays to ensure text readability & premium feel */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-ivory via-brand-ivory/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-sakura/20 via-transparent to-brand-ivory/70 mix-blend-overlay" />
-
-        {/* Radial inner glow for focusing content */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(255,253,249,0.5)_100%)]" />
+        {/* Minimal elegant gradient overlay just for bottom text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-ivory/80 via-brand-ivory/20 to-transparent" />
       </motion.div>
 
       {/* Persistent subtle falling petals in background */}
@@ -59,7 +52,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <span className="text-brand-sakura-deep uppercase tracking-[0.4em] sm:tracking-[0.6em] text-xs sm:text-sm font-medium mb-6 sm:mb-10 block drop-shadow-sm font-sans">
-            The Celebration of Love | ආදරණීය විවාහ මංගල උත්සවය
+            The Celebration of Love
           </span>
 
           <div className="relative mb-8 sm:mb-12 w-full flex justify-center">
@@ -68,12 +61,9 @@ export const Hero: React.FC = () => {
 
             <h1 className="relative text-6xl sm:text-[7rem] lg:text-[9.5rem] font-display text-stone-800 leading-[1.1] sm:leading-[0.9] drop-shadow-sm flex flex-col items-center">
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-                <span>Pasidu</span>
+                <span>Sapna</span>
                 <span className="text-brand-sakura-deep italic font-light text-5xl sm:text-[6rem] lg:text-[8rem] inline-block">&</span>
-                <span>Tharuka</span>
-              </div>
-              <div className="text-3xl sm:text-5xl lg:text-6xl font-sinhala text-stone-800 tracking-tight mt-4 sm:mt-8">
-                පසිදු <span className="text-brand-sakura-deep italic font-light mx-2">&</span> තාරුකා
+                <span>Roshen</span>
               </div>
             </h1>
           </div>
@@ -82,10 +72,7 @@ export const Hero: React.FC = () => {
             <div className="hidden sm:block h-[1px] w-20 bg-gradient-to-r from-transparent to-brand-sakura-deep/40" />
             <div className="px-4 text-center max-w-xl space-y-4">
               <p className="text-[1.1rem] sm:text-2xl font-serif italic text-stone-700 tracking-wide leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,0.5)]">
-                Together with our families, we joyfully invite you to join us
-              </p>
-              <p className="text-lg sm:text-xl font-sinhala text-stone-600 leading-relaxed">
-                අපගේ පවුල් වල සාමාජිකයින් සමඟ එක්ව, අපගේ විවාහ මංගල උත්සවය සඳහා අප ඔබ සැමව මහත් ප්‍රීතියෙන් යුතුව පිළිගන්නෙමු.
+                Together with our families, we joyfully invite you and your family to join us
               </p>
             </div>
             <div className="hidden sm:block h-[1px] w-20 bg-gradient-to-l from-transparent to-brand-sakura-deep/40" />
@@ -98,7 +85,7 @@ export const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
               <span className="relative text-[16px] sm:text-3xl font-serif text-brand-sakura-deep tracking-[0.2em] sm:tracking-[0.4em] font-medium drop-shadow-sm flex items-center gap-2 sm:gap-3 whitespace-nowrap">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-brand-sakura flex-shrink-0" />
-                21 . 05 . 2026
+                26 . 07 . 2026
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-brand-sakura flex-shrink-0" />
               </span>
             </div>
@@ -110,7 +97,7 @@ export const Hero: React.FC = () => {
       <div className="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 mix-blend-multiply opacity-70">
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-sakura-deep/50" />
         <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-sakura-deep font-semibold font-sans">
-          Pubudu Villa Reception Hall • Piliyandala
+          Villa Crystal • Malabe
         </p>
         <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-brand-sakura-deep/50" />
       </div>
@@ -118,7 +105,7 @@ export const Hero: React.FC = () => {
       <div className="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 mix-blend-multiply opacity-70">
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-sakura-deep/50" />
         <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-sakura-deep font-semibold font-sans rotate-180">
-          Save the Date • May 2026
+          Save the Date • July 2026
         </p>
         <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-brand-sakura-deep/50" />
       </div>
