@@ -104,7 +104,7 @@ export const Hero: React.FC = () => {
 
       <div className="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-6 mix-blend-multiply opacity-70">
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-sakura-deep/50" />
-        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-sakura-deep font-semibold font-sans rotate-180">
+        <p className="writing-mode-vertical text-[11px] uppercase tracking-[0.6em] text-brand-sakura-deep font-semibold font-sans">
           Save the Date • July 2026
         </p>
         <div className="w-[1px] h-24 bg-gradient-to-t from-transparent to-brand-sakura-deep/50" />

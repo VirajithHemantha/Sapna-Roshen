@@ -27,7 +27,7 @@ export const IntroVideo: React.FC<IntroVideoProps> = ({ onComplete }) => {
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover opacity-70"
-            src="/b/Lotus_blooms_at_Sinhala_wedding_202605220006.mp4"
+            src="/Lotus_bud_blooming_in_temple_202605230346.mp4"
           />
           <div className="absolute inset-0 bg-black/30 pointer-events-none" />
           
